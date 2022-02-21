@@ -7,22 +7,26 @@ let tensValue = 0
 let secValue = 0
 let i = 0
 
-var intervalId = window.setInterval(function(){
-    tensValue++
-    if (tensValue < 10){
-        tensValue = "0" + tensValue
-    }
-    if (tensValue == 100){
-        tensValue = 0
-        secValue++
-        if (secValue < 10){
-            secValue = "0" + secValue
+function start (){
+    var intervalId = window.setInterval(function(){
+        tensValue++
+        if (tensValue < 10){
+            tensValue = "0" + tensValue
         }
-    }
-    tens.textContent = tensValue
-    sec.textContent = secValue
-}, 10);
+        if (tensValue == 100){
+            tensValue = 0
+            secValue++
+            if (secValue < 10){
+                secValue = "0" + secValue
+            }
+        }
+        tens.textContent = tensValue
+        sec.textContent = secValue
+    }, 10);
+}
 
+
+startBtn.addEventListener("click",start)
 resetBtn.addEventListener("click", function(){
     window.location.reload();
 })
