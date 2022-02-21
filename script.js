@@ -11,6 +11,6 @@ var intervalId = window.setInterval(function(){
     tensValue++
     if (tensValue < 10){
         tensValue = "0" + tensValue
-    } 
-    
+        console.log(tensValue)
+    }
 }, 10);
