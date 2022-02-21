@@ -22,3 +22,7 @@ var intervalId = window.setInterval(function(){
     tens.textContent = tensValue
     sec.textContent = secValue
 }, 10);
+
+resetBtn.addEventListener("click", function(){
+    window.location.reload();
+})
