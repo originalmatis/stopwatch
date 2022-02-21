@@ -6,10 +6,12 @@ const sec = document.querySelector("#seconds")
 let tensValue = 0
 let secValue = 0
 let i = 0
+let x = 0
 
 function start (){
     var intervalId = window.setInterval(function(){
-        tensValue++
+        if (x === 0){
+            tensValue++
         if (tensValue < 10){
             tensValue = "0" + tensValue
         }
@@ -22,11 +24,18 @@ function start (){
         }
         tens.textContent = tensValue
         sec.textContent = secValue
+        }
     }, 10);
 }
 
 
+stopBtn.addEventListener("click",function(){
+    x = 1
+})
 startBtn.addEventListener("click",start)
+startBtn.addEventListener("click",function(){
+    x = 0
+})
 resetBtn.addEventListener("click", function(){
     window.location.reload();
 })
